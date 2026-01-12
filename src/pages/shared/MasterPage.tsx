@@ -4,6 +4,7 @@ import ErrorFallback from '../error/ErrorPage';
 import { useThemeState } from '../../state/useThemeState';
 import { MantineProvider } from '@mantine/core';
 import { Outlet } from 'react-router-dom';
+import Appbar from './menu/AppBar';
 // const notistackRef: React.RefObject<any> = createRef();
 // const onClickDismiss = (key: SnackbarKey) => () => {
 //   notistackRef.current.closeSnackbar(key);
@@ -23,9 +24,12 @@ function MasterPage() {
   console.log('MasterPage - režim:', import.meta.env);
 
   return (
-    <MantineProvider defaultColorScheme={mode ? 'dark' : 'light'}>
+    <MantineProvider defaultColorScheme={mode ? 'dark' : 'dark'}>
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <Outlet />
+        <>
+          <Appbar />
+          <Outlet />
+        </>
       </ErrorBoundary>
     </MantineProvider>
   );
