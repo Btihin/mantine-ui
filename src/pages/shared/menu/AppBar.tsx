@@ -1,8 +1,9 @@
 import { useDisclosure } from '@mantine/hooks';
 import classes from './Appbar.module.css';
 import { AppShell, Burger, Group, UnstyledButton } from '@mantine/core';
+import type { PropsWithChildren } from 'react';
 
-export default function Appbar() {
+export default function Appbar(props: PropsWithChildren) {
   const [opened, { toggle }] = useDisclosure();
 
   return (
@@ -33,10 +34,7 @@ export default function Appbar() {
         <UnstyledButton className={classes.control}>Support</UnstyledButton>
       </AppShell.Navbar>
 
-      <AppShell.Main>
-        Navbar is only visible on mobile, links that are rendered in the header on desktop are hidden on
-        mobile in header and rendered in navbar instead.
-      </AppShell.Main>
+      <AppShell.Main>{props.children}</AppShell.Main>
     </AppShell>
   );
 }

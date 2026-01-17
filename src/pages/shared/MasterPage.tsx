@@ -3,6 +3,7 @@ import ErrorFallback from '../error/ErrorPage';
 //import HlavniMenu from './menu/Appbar';
 import { useThemeState } from '../../state/useThemeState';
 import { MantineProvider } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
 import { Outlet } from 'react-router-dom';
 import Appbar from './menu/AppBar';
 // const notistackRef: React.RefObject<any> = createRef();
@@ -25,10 +26,12 @@ function MasterPage() {
 
   return (
     <MantineProvider defaultColorScheme={mode ? 'dark' : 'dark'}>
+      <Notifications />
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <>
-          <Appbar />
-          <Outlet />
+          <Appbar>
+            <Outlet />
+          </Appbar>
         </>
       </ErrorBoundary>
     </MantineProvider>

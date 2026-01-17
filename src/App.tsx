@@ -1,4 +1,6 @@
 import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
+
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import MasterPage from './pages/shared/MasterPage';
 import PageNotFound from './pages/error/PageNotFound';
