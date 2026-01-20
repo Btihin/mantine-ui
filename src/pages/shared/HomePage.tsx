@@ -1,4 +1,4 @@
-import { Button } from '@mantine/core';
+import { Button, Card, TextInput, Group, Stack, Center } from '@mantine/core'; // Added new components
 import { notifications } from '@mantine/notifications';
 import { useEffect, useState } from 'react';
 
@@ -37,6 +37,19 @@ const HomePage = () => {
       >
         druhá notifikace
       </Button>
+
+      {/* New Card for search */}
+      <Center style={{ marginTop: '20px' }}>
+        <Card withBorder shadow="sm" padding="lg" radius="md" style={{ width: '80%', maxWidth: '400px', height: '300px' }}>
+          <Stack align="center" justify="center" h="100%">
+            <TextInput label="Nabídku" placeholder="Hledat nabídku..." style={{ width: '100%' }} />
+            <TextInput label="Kraj" placeholder="Vybrat kraj..." style={{ width: '100%' }} />
+            <Button fullWidth mt="md">
+              Hledat
+            </Button>
+          </Stack>
+        </Card>
+      </Center>
     </div>
   );
 };

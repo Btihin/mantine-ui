@@ -25,7 +25,7 @@ function MasterPage() {
   console.log('MasterPage - režim:', import.meta.env);
 
   return (
-    <MantineProvider defaultColorScheme={mode ? 'dark' : 'dark'}>
+    <MantineProvider forceColorScheme={mode ? 'dark' : 'light'}>
       <Notifications />
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <>

@@ -7,6 +7,7 @@ import PageNotFound from './pages/error/PageNotFound';
 import HomePage from './pages/shared/HomePage';
 import ErrorPermission from './pages/error/ErrorPermission';
 import ErrorServer from './pages/error/ErrorServer';
+import { LoginPage } from './pages/auth/LoginPage';
 
 function App() {
   const router = createBrowserRouter(
@@ -17,6 +18,10 @@ function App() {
         errorElement: <PageNotFound />,
         children: [
           { index: true, element: <HomePage /> },
+          {
+            path: 'login',
+            element: <LoginPage />,
+          },
           {
             path: 'chyba-500',
             element: <ErrorServer />,
